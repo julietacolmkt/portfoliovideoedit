@@ -35,6 +35,7 @@
     .chips { display:flex; gap:.55rem; margin-top:1.15rem; }
     .chip { border:1px solid rgba(251,244,245,.6); border-radius:999px; padding:.34rem .85rem; font-size:clamp(.7rem,.84vw,.92rem); }
     .cover-showcase { min-width:0; align-self:stretch; display:flex; flex-direction:column; justify-content:center; }
+    .cover-single { width:min(100%,clamp(15rem,27vw,26rem)); align-self:center; }
     .cover-pair { display:grid; grid-template-columns:1fr 1fr; gap:.85rem; min-height:0; }
     .cover-video { position:relative; aspect-ratio:9/16; max-height:61vh; overflow:hidden; border:1px solid rgba(251,244,245,.6); background:#260913; }
     video { display:block; width:100%; height:100%; object-fit:contain; background:#260913; }
@@ -71,7 +72,7 @@
     .page-two .sheet { padding-top:1.2%; }
     @media (min-width:761px) and (min-aspect-ratio:4/3) {
       .page-two .sheet { height:auto; min-height:min(100svh,56.25vw); }
-      .work-grid { flex:none; grid-template-columns:12% 88%; min-height:62vh; padding:.75rem 0; }
+      .work-grid { flex:none; grid-template-columns:1fr; min-height:62vh; padding:.75rem 0; }
       .pairs { min-height:60vh; }
       .pair-card { padding:.5rem; }
       .video-pair { min-height:44vh; }
@@ -81,7 +82,7 @@
     .strategy-intro { display:grid; grid-template-columns:56% 44%; align-items:end; gap:4%; padding:1.05% 0 1%; border-bottom:1px solid var(--line); }
     .strategy-intro h2 { font-size:clamp(2.1rem,3.45vw,4.6rem); line-height:.94; max-width:12ch; }
     .strategy-intro p { margin:0 0 .25rem; font-size:clamp(.86rem,1.2vw,1.35rem); line-height:1.5; max-width:34rem; }
-    .work-grid { flex:1; display:grid; grid-template-columns:15% 85%; grid-template-rows:minmax(0,1fr); gap:2%; min-height:0; padding:1.1% 0 1%; }
+    .work-grid { flex:1; display:grid; grid-template-columns:1fr; grid-template-rows:minmax(0,1fr); gap:2%; min-height:0; padding:1.1% 0 1%; }
     .work-grid > aside { min-height:0; }
     .section-label { margin:0 0 .75rem; color:var(--muted); letter-spacing:.08em; text-transform:uppercase; font-size:clamp(.72rem,1vw,1rem); }
     .feature-card,.pair-card { background:rgba(251,244,245,.7); border-radius:1.1rem; overflow:hidden; }
@@ -118,6 +119,7 @@
       .hero { grid-template-columns:1fr; gap:2rem; padding:2.4rem 0; }
       h1 { font-size:clamp(3.4rem,18vw,5rem); }
       .cover-showcase { width:100%; }
+      .cover-single { width:min(100%,22rem); }
       .cover-pair { gap:.65rem; }
       .cover-video { max-height:none; }
       .footer { margin-top:auto; padding-top:.8rem; font-size:.68rem; gap:1rem; }
@@ -156,11 +158,10 @@
             <div class="chips" aria-label="Formatos"><span class="chip">Reels</span><span class="chip">YouTube</span><span class="chip">UGC</span></div>
           </div>
           <div class="cover-showcase">
-            <div class="cover-pair" data-cover-pair>
-              <div class="cover-video"><video src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/par2-antes.mp4" aria-label="Antes del Reel" preload="metadata" muted playsinline autoplay loop></video></div>
-              <div class="cover-video"><video src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/par2-despues.mp4" aria-label="Después del Reel" preload="metadata" muted playsinline autoplay loop></video></div>
+            <div class="cover-single" data-cover-pair>
+              <div class="cover-video"><video src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/solo.mp4" aria-label="El resultado de cerca, detalle de belleza" preload="metadata" muted playsinline autoplay loop></video></div>
             </div>
-            <p class="cover-caption">Antes y después de un Reel</p>
+            <p class="cover-caption">El resultado de cerca</p>
           </div>
         </div>
         <footer class="footer"><span class="contact-footer"><a href="mailto:julietacollinsmkt@gmail.com">julietacollinsmkt@gmail.com</a></span><span>01 / 02</span></footer>
@@ -175,16 +176,6 @@
           <p>Edito pensando en lo que ve la persona en los primeros 3 segundos y en lo que hace después.</p>
         </div>
         <div class="work-grid">
-          <aside>
-            <p class="section-label">Ejemplo destacado</p>
-            <article class="feature-card video-group" data-video-group>
-              <div class="feature-media video-wrap">
-                <video src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/solo.mp4" aria-label="El resultado de cerca" preload="metadata" muted playsinline></video>
-                <span class="open-hint" aria-hidden="true">Ampliar · controles</span>
-              </div>
-              <div class="card-copy"><span class="index">00 · pieza individual</span><h3>El resultado de cerca</h3><p>Tipo: belleza · Gancho: plano detalle</p><p class="case-note"><strong>Material:</strong> clip original · <strong>Enfoque:</strong> plano detalle · <strong>Objetivo:</strong> mostrar el resultado.</p></div>
-            </article>
-          </aside>
           <div class="pairs-column">
             <p class="section-label">Antes y después · lado a lado</p>
             <div class="pairs">
