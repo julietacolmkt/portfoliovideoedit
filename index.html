@@ -119,6 +119,7 @@
     }
 
     .nav-links { display:flex; align-items:center; gap:clamp(.7rem,2vw,2rem); text-transform:none; letter-spacing:0; }
+    .page-one .topline { position:sticky; top:0; z-index:10; background:var(--burgundy); }
     .nav-links a { color:inherit; text-decoration:none; }
     .nav-links a:hover { text-decoration:underline; text-underline-offset:.25em; }
     .hero-actions { display:flex; flex-wrap:wrap; gap:.7rem; margin-top:1.2rem; }
@@ -167,7 +168,7 @@
       .featured-frame { aspect-ratio:3/4; }
       .featured-card strong { font-size:.78rem; }
       .featured-card small { font-size:.72rem; }
-      .page-one .sheet,.page-two .sheet { width:100%; }
+      .page-one .sheet,.page-two .sheet { width:100%; min-height:100svh; }
       .page-two .work-grid { min-height:0; }
       .page-two .pairs { min-height:0; }
       .page-two .video-pair { min-height:42svh; }
@@ -288,7 +289,18 @@
       const pages = [...document.querySelectorAll('.page')];
       const go = delta => {
         const current = pages.reduce((best, page, i) => Math.abs(page.getBoundingClientRect().top) < Math.abs(pages[best].getBoundingClientRect().top) ? i : best, 0);
-        pages[Math.max(0, Math.min(pages.length - 1, current + delta))].scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
+        const active = pages[current];
+        const rect = active.getBoundingClientRect();
+        const behavior = matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+        if (delta > 0 && rect.bottom > innerHeight + 24) {
+          scrollBy({top:innerHeight * .82, behavior});
+          return;
+        }
+        if (delta < 0 && rect.top < -24) {
+          scrollBy({top:-innerHeight * .82, behavior});
+          return;
+        }
+        pages[Math.max(0, Math.min(pages.length - 1, current + delta))].scrollIntoView({behavior});
       };
       addEventListener('keydown', event => {
         if (dialog?.open) return;
@@ -368,9 +380,11 @@
       });
 
       document.querySelectorAll('.featured-preview').forEach(video => {
+        video.preload = 'auto';
         video.addEventListener('loadeddata', () => {
           try { video.currentTime = Math.min(0.01, video.duration || 0.01); } catch (_) {}
         }, {once:true});
+        video.load();
       });
       const cover = document.querySelector('[data-cover-pair]');
       const coverVideo = cover?.querySelector('video');
