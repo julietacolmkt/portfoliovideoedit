@@ -20,6 +20,17 @@
     .page { min-height:100svh; scroll-snap-align:start; scroll-snap-stop:always; display:grid; place-items:center; background:#151515; }
     .sheet { width:min(100vw,177.7778svh); height:min(100svh,56.25vw); min-height:620px; padding:2.15% 3.55% 1.6%; overflow:hidden; display:flex; flex-direction:column; }
     .page-one .sheet { background:var(--burgundy); color:var(--cream); }
+    .page-one .sheet { height:auto; min-height:min(100svh,56.25vw); overflow:visible; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:.7rem; margin-top:1.2rem; }
+    .hero-button { display:inline-flex; align-items:center; justify-content:center; padding:.68rem 1.15rem; border:1px solid var(--cream); border-radius:.6rem; text-decoration:none; font-weight:700; }
+    .hero-button-primary { background:var(--cream); color:var(--burgundy); }
+    .hero-button-secondary { background:transparent; color:var(--cream); }
+    .hero-button:hover { background:var(--accent); color:var(--burgundy); border-color:var(--accent); }
+    .focus-row { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; border-top:1px solid rgba(251,244,245,.42); padding:1rem 0; }
+    .focus-row > div { display:flex; flex-direction:column; align-items:center; gap:.2rem; text-align:center; }
+    .focus-row strong { font-size:clamp(1rem,1.35vw,1.35rem); }
+    .focus-row span { font-size:clamp(.75rem,.95vw,.95rem); opacity:.82; }
+
     .page-two .sheet { background:var(--pink); color:var(--ink); }
     .topline,.footer { display:flex; justify-content:space-between; align-items:center; text-transform:uppercase; letter-spacing:.12em; font-size:clamp(.68rem,1vw,1rem); }
     .topline { border-bottom:1px solid currentColor; padding-bottom:1.25%; }
@@ -123,6 +134,11 @@
       .page { min-height:100svh; display:block; background:transparent; }
       .sheet { width:100%; height:auto; min-height:100svh; padding:1.35rem 1.15rem; overflow:visible; }
       .topline { align-items:flex-start; gap:1rem; font-size:.68rem; padding-bottom:.8rem; }
+      .page-one .sheet { min-height:100svh; }
+      .hero-actions { margin-top:1rem; }
+      .focus-row { gap:.45rem; padding:.85rem 0; }
+      .focus-row strong { font-size:.82rem; }
+      .focus-row span { font-size:.68rem; }
       .hero { grid-template-columns:1fr; gap:2rem; padding:2.4rem 0; }
       h1 { font-size:clamp(3.4rem,18vw,5rem); }
       .cover-showcase { width:100%; }
@@ -162,7 +178,7 @@
             <p class="statement">Del material en bruto a la pieza final.</p>
             <p class="description">Edición de Reels, video vertical y UGC con ritmo, claridad y una intención para cada pieza.</p>
             
-            <div class="chips" aria-label="Formatos"><span class="chip">Reels</span><span class="chip">YouTube</span><span class="chip">UGC</span></div>
+            <div class="hero-actions"><a class="hero-button hero-button-primary" href="#pagina-2">Ver trabajos</a><a class="hero-button hero-button-secondary" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=julietacollinsmkt%40gmail.com&amp;su=Hablemos%20de%20tu%20proyecto" target="_blank" rel="noopener noreferrer">Contactarme</a></div>
           </div>
           <div class="cover-showcase">
             <div class="cover-single" data-cover-pair>
@@ -171,6 +187,11 @@
             </div>
           </div>
         </div>
+        <section class="focus-row" aria-label="Áreas y formatos">
+          <div><strong>Moda · Belleza</strong><span>Categorías</span></div>
+          <div><strong>Lifestyle · UGC</strong><span>Contenidos</span></div>
+          <div><strong>Reels · YouTube</strong><span>Formatos</span></div>
+        </section>
         <footer class="footer"><span class="contact-footer"><a href="mailto:julietacollinsmkt@gmail.com">julietacollinsmkt@gmail.com</a></span><span>01 / 02</span></footer>
       </div>
     </section>
