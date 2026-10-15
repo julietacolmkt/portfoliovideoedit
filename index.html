@@ -213,6 +213,7 @@
         pages[Math.max(0, Math.min(pages.length - 1, current + delta))].scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
       };
       addEventListener('keydown', event => {
+        if (dialog?.open) return;
         if (['ArrowDown','PageDown','ArrowRight'].includes(event.key)) { event.preventDefault(); go(1); }
         if (['ArrowUp','PageUp','ArrowLeft'].includes(event.key)) { event.preventDefault(); go(-1); }
       });
