@@ -325,8 +325,14 @@
           video.load();
         });
         group.querySelectorAll('.play').forEach(button => button.addEventListener('click', event => { event.stopPropagation(); toggle(group); }));
-        group.addEventListener('mouseenter', () => {});
-        group.addEventListener('mouseleave', () => {});
+        if (matchMedia('(hover: hover)').matches) {
+          group.addEventListener('mouseenter', () => play(group));
+          group.addEventListener('mouseleave', () => reset(group));
+        }
+        group.addEventListener('focusin', () => play(group));
+        group.addEventListener('focusout', event => {
+          if (!group.contains(event.relatedTarget)) reset(group);
+        });
         videos.forEach(video => video.addEventListener('ended', () => {
           video.currentTime = 0;
           if (videos.every(item => item.ended || item.currentTime === 0)) group.classList.remove('is-playing');
