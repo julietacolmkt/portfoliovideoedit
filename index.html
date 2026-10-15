@@ -118,11 +118,61 @@
       .page-two .video-pair { min-height:48vh; }
     }
 
+    .nav-links { display:flex; align-items:center; gap:clamp(.7rem,2vw,2rem); text-transform:none; letter-spacing:0; }
+    .nav-links a { color:inherit; text-decoration:none; }
+    .nav-links a:hover { text-decoration:underline; text-underline-offset:.25em; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:.7rem; margin-top:1.2rem; }
+    .hero-button { display:inline-flex; align-items:center; justify-content:center; padding:.68rem 1.15rem; border:1px solid var(--cream); border-radius:.6rem; text-decoration:none; font-weight:700; }
+    .hero-button-primary { background:var(--cream); color:var(--burgundy); }
+    .hero-button-secondary { background:transparent; color:var(--cream); }
+    .hero-button:hover { background:var(--accent); color:var(--burgundy); border-color:var(--accent); }
+    .format-row,.service-row { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; border-top:1px solid currentColor; padding:1rem 0; }
+    .format-row > div,.service-row > article { display:flex; flex-direction:column; gap:.2rem; }
+    .format-row strong,.service-row strong { font-size:clamp(1rem,1.4vw,1.4rem); }
+    .format-row span,.service-row span { opacity:.8; }
+    .featured-section { padding:1.1rem 0 1.5rem; }
+    .featured-heading { display:flex; align-items:center; justify-content:space-between; gap:1rem; margin-bottom:.7rem; }
+    .featured-heading h2 { font-size:clamp(1.3rem,2vw,2rem); }
+    .featured-heading a { color:var(--cream); text-underline-offset:.2em; }
+    .featured-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; }
+    .featured-card { min-width:0; color:var(--cream); text-decoration:none; display:flex; flex-direction:column; gap:.3rem; }
+    .featured-frame { position:relative; aspect-ratio:9/8; overflow:hidden; border:1px solid rgba(251,244,245,.55); border-radius:.7rem; background:#3e1524; }
+    .featured-frame video { position:absolute; inset:0; object-fit:cover; }
+    .featured-frame span { position:absolute; inset:auto .5rem .5rem; padding:.35rem .5rem; border-radius:999px; background:var(--cream); color:var(--burgundy); text-align:center; font-size:.78rem; }
+    .featured-card strong { font-size:clamp(.85rem,1.05vw,1.05rem); }
+    .featured-card small { font-size:.88rem; opacity:.8; }
+    .service-row { border-top:0; padding:.4rem 0 1rem; }
+    .service-row article { border:1px solid var(--line); border-radius:.7rem; padding:.8rem; background:rgba(251,244,245,.55); }
+    .page-one .sheet,.page-two .sheet { height:auto; min-height:min(100svh,56.25vw); overflow:visible; margin:0 auto; }
+    .page { display:block; background:transparent; }
+    .sheet { width:min(100vw,177.7778svh); }
+    .page-two .work-grid { flex:none; min-height:52vh; padding:.8rem 0; }
+    .page-two .pairs { min-height:48vh; }
+    .page-two .video-pair { min-height:34vh; }
+    .pair-card { padding:.55rem; }
+    .pair-card[id] { scroll-margin-top:1rem; }
+
     @media (max-aspect-ratio:4/3), (max-width:760px) {
       html { scroll-snap-type:y proximity; }
       .page { min-height:100svh; display:block; background:transparent; }
       .sheet { width:100%; height:auto; min-height:100svh; padding:1.35rem 1.15rem; overflow:visible; }
       .topline { align-items:flex-start; gap:1rem; font-size:.68rem; padding-bottom:.8rem; }
+      .nav-links { flex-wrap:wrap; justify-content:flex-end; gap:.45rem .75rem; font-size:.72rem; }
+      .hero-actions { margin-top:1rem; }
+      .format-row,.service-row { gap:.65rem; }
+      .format-row strong,.service-row strong { font-size:1rem; }
+      .format-row span,.service-row span { font-size:.75rem; }
+      .featured-section { padding:1rem 0 1.3rem; }
+      .featured-grid { gap:.65rem; }
+      .featured-frame { aspect-ratio:3/4; }
+      .featured-card strong { font-size:.78rem; }
+      .featured-card small { font-size:.72rem; }
+      .page-one .sheet,.page-two .sheet { width:100%; }
+      .page-two .work-grid { min-height:0; }
+      .page-two .pairs { min-height:0; }
+      .page-two .video-pair { min-height:42svh; }
+      .page-one .topline { position:relative; }
+
       .hero { grid-template-columns:1fr; gap:2rem; padding:2.4rem 0; }
       h1 { font-size:clamp(3.4rem,18vw,5rem); }
       .cover-showcase { width:100%; }
@@ -152,7 +202,7 @@
   <main>
     <section class="page page-one" id="pagina-1" aria-label="Página 1, portada">
       <div class="sheet">
-        <header class="topline"><span>Portfolio de edición de video / 2026</span><span class="brand-mark">JC</span></header>
+        <header class="topline"><a class="brand-mark" href="#pagina-1" aria-label="Inicio">JC</a><nav class="nav-links" aria-label="Navegación principal"><a href="#trabajos">Trabajos</a><a href="#antes-despues">Antes y después</a><a href="#contacto">Contacto</a></nav></header>
         <div class="hero">
           <div class="hero-copy">
             <p class="eyebrow">Moda | Belleza | Lifestyle | UGC</p>
@@ -161,8 +211,7 @@
             <hr class="hero-rule">
             <p class="statement">Del material en bruto a la pieza final.</p>
             <p class="description">Edición de Reels, video vertical y UGC con ritmo, claridad y una intención para cada pieza.</p>
-            
-            <div class="chips" aria-label="Formatos"><span class="chip">Reels</span><span class="chip">YouTube</span><span class="chip">UGC</span></div>
+            <div class="hero-actions"><a class="hero-button hero-button-primary" href="#trabajos">Ver trabajos</a><a class="hero-button hero-button-secondary" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=julietacollinsmkt%40gmail.com&amp;su=Hablemos%20de%20tu%20proyecto" target="_blank" rel="noopener noreferrer">Contactarme</a></div>
           </div>
           <div class="cover-showcase">
             <div class="cover-single" data-cover-pair>
@@ -171,6 +220,12 @@
             <div class="cover-caption">Edición con DaVinci Resolve</div>
           </div>
         </div>
+        <section class="format-row" aria-label="Formatos de edición"><div><strong>Reels</strong><span>Video vertical</span></div><div><strong>YouTube</strong><span>Edición de video</span></div><div><strong>UGC</strong><span>Contenido para marcas</span></div></section>
+        <section class="featured-section" id="trabajos" aria-labelledby="featured-title"><div class="featured-heading"><h2 id="featured-title">Trabajos destacados</h2><a href="#antes-despues">Ver antes y después <span aria-hidden="true">→</span></a></div><div class="featured-grid">
+          <a class="featured-card" href="#project-01"><div class="featured-frame"><video class="featured-preview" src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/par1-despues.mp4" muted playsinline preload="metadata" aria-label="Vista previa: El diseño de la mirada"></video><span>Ver proyecto</span></div><strong>El diseño de la mirada</strong><small>Belleza · POV</small></a>
+          <a class="featured-card" href="#project-02"><div class="featured-frame"><video class="featured-preview" src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/par2-despues.mp4?portfolio-page=2#t=0.01" muted playsinline preload="metadata" aria-label="Vista previa: Explicación a cámara"></video><span>Ver proyecto</span></div><strong>Explicación a cámara</strong><small>Educativo · a cámara</small></a>
+          <a class="featured-card" href="#project-03"><div class="featured-frame"><video class="featured-preview" src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/par3-despues.mp4" muted playsinline preload="metadata" aria-label="Vista previa: Humor y resultado visual"></video><span>Ver proyecto</span></div><strong>Humor y resultado visual</strong><small>Moda · humor</small></a>
+        </div></section>
         <footer class="footer"><span class="contact-footer"><a href="mailto:julietacollinsmkt@gmail.com">julietacollinsmkt@gmail.com</a></span><span>01 / 02</span></footer>
       </div>
     </section>
@@ -179,14 +234,14 @@
       <div class="sheet">
         <header class="topline"><span>Edición de Reels / con estrategia</span><span>Moda | Belleza | Lifestyle | UGC</span></header>
         <div class="strategy-intro">
-          <h2>Cada segundo tiene una función.</h2>
-          <p>Edito pensando en lo que ve la persona en los primeros 3 segundos y en lo que hace después.</p>
+          <h2>Cada corte tiene una función.</h2>
+          <p>Antes y después de tres proyectos.</p>
         </div>
         <div class="work-grid">
           <div class="pairs-column">
             <p class="section-label">Antes y después · lado a lado</p>
-            <div class="pairs">
-              <article class="pair-card video-group" data-video-group>
+            <div class="pairs" id="antes-despues">
+              <article class="pair-card video-group" id="project-01" data-video-group>
                 <div class="video-pair">
                   <div class="video-wrap"><video src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/par1-antes.MOV" aria-label="Antes: El diseño de la mirada" preload="metadata" muted playsinline></video><span class="open-hint" aria-hidden="true">Ampliar · controles</span></div>
                   <div class="video-wrap"><video src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/par1-despues.mp4" aria-label="Después: El diseño de la mirada" preload="metadata" muted playsinline></video><span class="open-hint" aria-hidden="true">Ampliar · controles</span></div>
@@ -194,7 +249,7 @@
                 <div class="labels"><span class="label">ANTES</span><span class="label after">DESPUÉS</span></div>
                 <div class="card-copy"><span class="index">01</span><h3>El diseño de la mirada</h3><p>Tipo: belleza · Gancho: POV y primer plano</p><p class="case-note"><strong>Material:</strong> antes y después · <strong>Enfoque:</strong> comparativa directa · <strong>Objetivo:</strong> destacar el diseño de la mirada.</p></div>
               </article>
-              <article class="pair-card video-group" data-video-group>
+              <article class="pair-card video-group" id="project-02" data-video-group>
                 <div class="video-pair">
                   <div class="video-wrap"><video src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/par2-antes.mp4?portfolio-page=2#t=0.01" aria-label="Antes: Explicación a cámara" preload="metadata" muted playsinline></video><span class="open-hint" aria-hidden="true">Ampliar · controles</span></div>
                   <div class="video-wrap"><video src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/par2-despues.mp4?portfolio-page=2#t=0.01" aria-label="Después: Explicación a cámara" preload="metadata" muted playsinline></video><span class="open-hint" aria-hidden="true">Ampliar · controles</span></div>
@@ -202,7 +257,7 @@
                 <div class="labels"><span class="label">ANTES</span><span class="label after">DESPUÉS</span></div>
                 <div class="card-copy"><span class="index">02</span><h3>Explicación a cámara</h3><p>Tipo: contenido educativo · Gancho: frase directa</p><p class="case-note"><strong>Material:</strong> toma a cámara · <strong>Enfoque:</strong> explicación directa · <strong>Objetivo:</strong> presentar el mensaje.</p></div>
               </article>
-              <article class="pair-card video-group" data-video-group>
+              <article class="pair-card video-group" id="project-03" data-video-group>
                 <div class="video-pair">
                   <div class="video-wrap"><video src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/par3-antes.mov" aria-label="Antes: Humor y resultado visual" preload="metadata" muted playsinline></video><span class="open-hint" aria-hidden="true">Ampliar · controles</span></div>
                   <div class="video-wrap"><video src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/par3-despues.mp4" aria-label="Después: Humor y resultado visual" preload="metadata" muted playsinline></video><span class="open-hint" aria-hidden="true">Ampliar · controles</span></div>
@@ -218,7 +273,8 @@
           <p><strong>Ritmo</strong>Cortes y subtítulos con énfasis para sostener la atención.</p>
           <p><strong>Cierre</strong>Una llamada a la acción clara: reservar, escribir o guardar.</p>
         </div>
-        <section class="contact-end" aria-label="Contacto"><div><h2>¿Trabajamos en tu próximo video?</h2><a href="mailto:julietacollinsmkt@gmail.com">julietacollinsmkt@gmail.com</a></div><a class="project-cta" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=julietacollinsmkt%40gmail.com&amp;su=Hablemos%20de%20tu%20proyecto" target="_blank" rel="noopener noreferrer">Contactarme</a></section>
+        <section class="service-row" aria-label="Formatos"><article><strong>Reels</strong><span>Edición vertical</span></article><article><strong>UGC</strong><span>Video para marcas</span></article><article><strong>YouTube</strong><span>Montaje de video</span></article></section>
+        <section class="contact-end" id="contacto" aria-label="Contacto"><div><h2>¿Trabajamos en tu próximo video?</h2><a href="mailto:julietacollinsmkt@gmail.com">julietacollinsmkt@gmail.com</a></div><a class="project-cta" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=julietacollinsmkt%40gmail.com&amp;su=Hablemos%20de%20tu%20proyecto" target="_blank" rel="noopener noreferrer">Contactarme</a></section>
         <footer class="footer"><span>Julieta Collins / Reels con estrategia</span><span>02 / 02</span></footer>
       </div>
     </section>
@@ -311,6 +367,11 @@
         }));
       });
 
+      document.querySelectorAll('.featured-preview').forEach(video => {
+        video.addEventListener('loadeddata', () => {
+          try { video.currentTime = Math.min(0.01, video.duration || 0.01); } catch (_) {}
+        }, {once:true});
+      });
       const cover = document.querySelector('[data-cover-pair]');
       const coverVideo = cover?.querySelector('video');
       const startCover = () => {
