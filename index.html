@@ -42,6 +42,10 @@
     .case-note { margin:.2rem 0 0; color:#654552; font-size:clamp(.67rem,.82vw,.88rem); line-height:1.35; }
     .project-cta { display:inline-flex; align-items:center; justify-content:center; padding:.7rem 1rem; border:1px solid var(--burgundy); border-radius:999px; background:var(--burgundy); color:var(--cream); text-decoration:none; font-weight:700; }
     .project-cta:hover { background:transparent; color:var(--burgundy); }
+    .contact-footer { display:flex; align-items:center; gap:1rem; }
+    .contact-footer > a:first-child { color:inherit; text-decoration:underline; text-underline-offset:.2em; }
+    .page-one .contact-footer .project-cta { color:var(--cream); border-color:var(--accent); background:transparent; }
+    .page-one .contact-footer .project-cta:hover { color:var(--burgundy); background:var(--accent); }
     .video-wrap { cursor:pointer; }
     .open-hint { position:absolute; inset:auto .45rem .45rem; z-index:2; border-radius:999px; padding:.3rem .5rem; background:rgba(251,244,245,.94); color:var(--burgundy); font-size:clamp(.6rem,.74vw,.78rem); text-align:center; pointer-events:none; }
     .video-wrap .play { display:none; }
@@ -58,6 +62,15 @@
 
     .page-two .topline { color:var(--burgundy); }
     .page-two .sheet { padding-top:1.2%; }
+    @media (min-width:761px) and (min-aspect-ratio:4/3) {
+      .page-two .sheet { height:auto; min-height:min(100svh,56.25vw); }
+      .work-grid { flex:none; grid-template-columns:12% 88%; min-height:58vh; padding:1rem 0; }
+      .pairs { min-height:55vh; }
+      .pair-card { padding:.55rem; }
+      .video-pair { min-height:38vh; }
+      .feature-card { height:auto; }
+      .feature-media { height:38vh; flex:none; }
+    }
     .strategy-intro { display:grid; grid-template-columns:56% 44%; align-items:end; gap:4%; padding:1.05% 0 1%; border-bottom:1px solid var(--line); }
     .strategy-intro h2 { font-size:clamp(2.1rem,3.45vw,4.6rem); line-height:.94; max-width:12ch; }
     .strategy-intro p { margin:0 0 .25rem; font-size:clamp(.86rem,1.2vw,1.35rem); line-height:1.5; max-width:34rem; }
@@ -111,6 +124,9 @@
       .pair-card .card-copy h3 { white-space:normal; }
       .method { grid-template-columns:1fr; gap:1rem; padding:1.5rem 0; }
       .page-two .footer { margin-top:0; }
+      .contact-footer { flex-wrap:wrap; gap:.65rem; }
+      .contact-footer .project-cta { padding:.5rem .7rem; font-size:.72rem; }
+      .page-one .contact-footer { align-items:flex-start; flex-direction:column; gap:.7rem; }
     }
     @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .play { transition:none; } }
   </style>
@@ -128,7 +144,7 @@
             <hr class="hero-rule">
             <p class="statement">Del material en bruto a la pieza final.</p>
             <p class="description">Edición de Reels, video vertical y UGC con ritmo, claridad y una intención para cada pieza.</p>
-            <a class="project-cta" href="mailto:julietacollinsmkt@gmail.com?subject=Hablemos%20de%20tu%20proyecto">Hablemos de tu proyecto</a>
+            
             <div class="chips" aria-label="Formatos"><span class="chip">Reels</span><span class="chip">YouTube</span><span class="chip">UGC</span></div>
           </div>
           <div class="cover-showcase">
@@ -139,7 +155,7 @@
             <p class="cover-caption">Antes y después de un Reel</p>
           </div>
         </div>
-        <footer class="footer"><span>julietacollinsmkt@gmail.com</span><span>01 / 02</span></footer>
+        <footer class="footer"><span class="contact-footer"><a href="mailto:julietacollinsmkt@gmail.com">julietacollinsmkt@gmail.com</a><a class="project-cta" href="mailto:julietacollinsmkt@gmail.com?subject=Hablemos%20de%20tu%20proyecto">Hablemos de tu proyecto</a></span><span>01 / 02</span></footer>
       </div>
     </section>
 
