@@ -43,6 +43,10 @@
     .case-note { margin:.2rem 0 0; color:#654552; font-size:clamp(.67rem,.82vw,.88rem); line-height:1.35; }
     .project-cta { display:inline-flex; align-items:center; justify-content:center; padding:.7rem 1rem; border:1px solid var(--burgundy); border-radius:999px; background:var(--burgundy); color:var(--cream); text-decoration:none; font-weight:700; }
     .project-cta:hover { background:transparent; color:var(--burgundy); }
+    .contact-end { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.6rem 0; color:var(--ink); }
+    .contact-end h2 { font-size:clamp(1.05rem,1.7vw,1.7rem); margin:0 0 .2rem; }
+    .contact-end div > a { color:var(--burgundy); text-underline-offset:.2em; }
+    .contact-end .project-cta { padding:.85rem 1.35rem; font-size:1rem; white-space:nowrap; }
     .contact-footer { display:flex; align-items:center; gap:1rem; }
     .contact-footer > a:first-child { color:inherit; text-decoration:underline; text-underline-offset:.2em; }
     .page-one .contact-footer .project-cta { color:var(--cream); border-color:var(--accent); background:transparent; }
@@ -125,6 +129,7 @@
       .pair-card .card-copy h3 { white-space:normal; }
       .method { grid-template-columns:1fr; gap:1rem; padding:1.5rem 0; }
       .page-two .footer { margin-top:0; }
+      .contact-end { align-items:flex-start; flex-direction:column; padding:1rem 0; }
       .contact-footer { flex-wrap:wrap; gap:.65rem; }
       .contact-footer .project-cta { padding:.5rem .7rem; font-size:.72rem; }
       .page-one .contact-footer { align-items:flex-start; flex-direction:column; gap:.7rem; }
@@ -156,7 +161,7 @@
             <p class="cover-caption">Antes y después de un Reel</p>
           </div>
         </div>
-        <footer class="footer"><span class="contact-footer"><a href="mailto:julietacollinsmkt@gmail.com">julietacollinsmkt@gmail.com</a><a class="project-cta" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=julietacollinsmkt%40gmail.com&amp;su=Hablemos%20de%20tu%20proyecto" target="_blank" rel="noopener noreferrer">Hablemos de tu proyecto</a></span><span>01 / 02</span></footer>
+        <footer class="footer"><span class="contact-footer"><a href="mailto:julietacollinsmkt@gmail.com">julietacollinsmkt@gmail.com</a></span><span>01 / 02</span></footer>
       </div>
     </section>
 
@@ -173,9 +178,9 @@
             <article class="feature-card video-group" data-video-group>
               <div class="feature-media video-wrap">
                 <video src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/solo.mp4" aria-label="El resultado de cerca" preload="metadata" muted playsinline></video>
-                <span class="open-hint" aria-hidden="true">Abrir video</span>
+                <span class="open-hint" aria-hidden="true">Ampliar · controles</span>
               </div>
-              <div class="card-copy"><span class="index">00 · pieza individual</span><h3>El resultado de cerca</h3><p>Tipo: belleza · Gancho: plano detalle</p><p class="case-note">La imagen cercana pone el resultado en primer plano.</p></div>
+              <div class="card-copy"><span class="index">00 · pieza individual</span><h3>El resultado de cerca</h3><p>Tipo: belleza · Gancho: plano detalle</p><p class="case-note"><strong>Material:</strong> clip individual · <strong>Enfoque:</strong> plano detalle · <strong>Objetivo:</strong> mostrar el resultado de belleza.</p></div>
             </article>
           </aside>
           <div class="pairs-column">
@@ -183,27 +188,27 @@
             <div class="pairs">
               <article class="pair-card video-group" data-video-group>
                 <div class="video-pair">
-                  <div class="video-wrap"><video src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/par1-antes.MOV" aria-label="Antes: El diseño de la mirada" preload="metadata" muted playsinline></video><span class="open-hint" aria-hidden="true">Abrir video</span></div>
-                  <div class="video-wrap"><video src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/par1-despues.mp4" aria-label="Después: El diseño de la mirada" preload="metadata" muted playsinline></video><span class="open-hint" aria-hidden="true">Abrir video</span></div>
+                  <div class="video-wrap"><video src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/par1-antes.MOV" aria-label="Antes: El diseño de la mirada" preload="metadata" muted playsinline></video><span class="open-hint" aria-hidden="true">Ampliar · controles</span></div>
+                  <div class="video-wrap"><video src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/par1-despues.mp4" aria-label="Después: El diseño de la mirada" preload="metadata" muted playsinline></video><span class="open-hint" aria-hidden="true">Ampliar · controles</span></div>
                 </div>
                 <div class="labels"><span class="label">ANTES</span><span class="label after">DESPUÉS</span></div>
-                <div class="card-copy"><span class="index">01</span><h3>El diseño de la mirada</h3><p>Tipo: belleza · Gancho: POV y primer plano</p><p class="case-note">El contraste entre proceso y resultado hace visible el cambio.</p></div>
+                <div class="card-copy"><span class="index">01</span><h3>El diseño de la mirada</h3><p>Tipo: belleza · Gancho: POV y primer plano</p><p class="case-note"><strong>Material:</strong> original y versión editada · <strong>Enfoque:</strong> comparación lado a lado · <strong>Objetivo:</strong> destacar el diseño de la mirada.</p></div>
               </article>
               <article class="pair-card video-group" data-video-group>
                 <div class="video-pair">
-                  <div class="video-wrap"><video src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/par2-antes.mp4?portfolio-page=2#t=0.01" aria-label="Antes: Explicación a cámara" preload="metadata" muted playsinline></video><span class="open-hint" aria-hidden="true">Abrir video</span></div>
-                  <div class="video-wrap"><video src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/par2-despues.mp4?portfolio-page=2#t=0.01" aria-label="Después: Explicación a cámara" preload="metadata" muted playsinline></video><span class="open-hint" aria-hidden="true">Abrir video</span></div>
+                  <div class="video-wrap"><video src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/par2-antes.mp4?portfolio-page=2#t=0.01" aria-label="Antes: Explicación a cámara" preload="metadata" muted playsinline></video><span class="open-hint" aria-hidden="true">Ampliar · controles</span></div>
+                  <div class="video-wrap"><video src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/par2-despues.mp4?portfolio-page=2#t=0.01" aria-label="Después: Explicación a cámara" preload="metadata" muted playsinline></video><span class="open-hint" aria-hidden="true">Ampliar · controles</span></div>
                 </div>
                 <div class="labels"><span class="label">ANTES</span><span class="label after">DESPUÉS</span></div>
-                <div class="card-copy"><span class="index">02</span><h3>Explicación a cámara</h3><p>Tipo: contenido educativo · Gancho: frase directa</p><p class="case-note">Una pieza a cámara que prioriza el mensaje hablado.</p></div>
+                <div class="card-copy"><span class="index">02</span><h3>Explicación a cámara</h3><p>Tipo: contenido educativo · Gancho: frase directa</p><p class="case-note"><strong>Material:</strong> toma a cámara · <strong>Enfoque:</strong> explicación directa · <strong>Objetivo:</strong> presentar el mensaje con claridad.</p></div>
               </article>
               <article class="pair-card video-group" data-video-group>
                 <div class="video-pair">
-                  <div class="video-wrap"><video src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/par3-antes.mov" aria-label="Antes: Humor y resultado visual" preload="metadata" muted playsinline></video><span class="open-hint" aria-hidden="true">Abrir video</span></div>
-                  <div class="video-wrap"><video src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/par3-despues.mp4" aria-label="Después: Humor y resultado visual" preload="metadata" muted playsinline></video><span class="open-hint" aria-hidden="true">Abrir video</span></div>
+                  <div class="video-wrap"><video src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/par3-antes.mov" aria-label="Antes: Humor y resultado visual" preload="metadata" muted playsinline></video><span class="open-hint" aria-hidden="true">Ampliar · controles</span></div>
+                  <div class="video-wrap"><video src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/par3-despues.mp4" aria-label="Después: Humor y resultado visual" preload="metadata" muted playsinline></video><span class="open-hint" aria-hidden="true">Ampliar · controles</span></div>
                 </div>
                 <div class="labels"><span class="label">ANTES</span><span class="label after">DESPUÉS</span></div>
-                <div class="card-copy"><span class="index">03</span><h3>Humor y resultado visual</h3><p>Tipo: moda · Gancho: conversación</p><p class="case-note">La conversación acompaña el resultado visual de la pieza.</p></div>
+                <div class="card-copy"><span class="index">03</span><h3>Humor y resultado visual</h3><p>Tipo: moda · Gancho: conversación</p><p class="case-note"><strong>Material:</strong> toma de conversación · <strong>Enfoque:</strong> humor y resultado visual · <strong>Objetivo:</strong> cerrar la pieza con el resultado.</p></div>
               </article>
             </div>
           </div>
@@ -213,7 +218,7 @@
           <p><strong>Ritmo</strong>Cortes y subtítulos con énfasis para sostener la atención.</p>
           <p><strong>Cierre</strong>Una llamada a la acción clara: reservar, escribir o guardar.</p>
         </div>
-        <div style="display:flex;justify-content:flex-end;padding:0 0 .7rem"><a class="project-cta" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=julietacollinsmkt%40gmail.com&amp;su=Hablemos%20de%20tu%20proyecto" target="_blank" rel="noopener noreferrer">Contactame por correo</a></div>
+        <section class="contact-end" aria-label="Contacto"><div><h2>¿Trabajamos en tu próximo video?</h2><a href="mailto:julietacollinsmkt@gmail.com">julietacollinsmkt@gmail.com</a></div><a class="project-cta" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=julietacollinsmkt%40gmail.com&amp;su=Hablemos%20de%20tu%20proyecto" target="_blank" rel="noopener noreferrer">Contactarme</a></section>
         <footer class="footer"><span>Julieta Collins / Reels con estrategia</span><span>02 / 02</span></footer>
       </div>
     </section>
