@@ -59,6 +59,8 @@
     .dialog::backdrop { background:rgba(30,8,17,.86); }
     .dialog-head { display:flex; justify-content:space-between; align-items:center; gap:1rem; margin-bottom:.7rem; }
     .dialog-head h2 { font-size:clamp(1.2rem,2vw,1.8rem); }
+    .dialog-actions { display:flex; gap:.5rem; align-items:center; }
+    .dialog-fullscreen { border:1px solid var(--burgundy); border-radius:999px; background:var(--burgundy); color:var(--cream); padding:.5rem .9rem; cursor:pointer; }
     .dialog-close { border:1px solid var(--burgundy); border-radius:999px; background:transparent; color:var(--burgundy); padding:.5rem .9rem; cursor:pointer; }
     .dialog video { width:100%; max-height:80svh; height:auto; aspect-ratio:9/16; margin:auto; background:#18060d; }
     .cover-caption { margin:.8rem 0 0; font-family:Georgia,'Times New Roman',serif; font-size:clamp(.95rem,1.25vw,1.35rem); }
@@ -180,7 +182,7 @@
                 <video src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/solo.mp4" aria-label="El resultado de cerca" preload="metadata" muted playsinline></video>
                 <span class="open-hint" aria-hidden="true">Ampliar · controles</span>
               </div>
-              <div class="card-copy"><span class="index">00 · pieza individual</span><h3>El resultado de cerca</h3><p>Tipo: belleza · Gancho: plano detalle</p><p class="case-note"><strong>Material:</strong> clip individual · <strong>Enfoque:</strong> plano detalle · <strong>Objetivo:</strong> mostrar el resultado de belleza.</p></div>
+              <div class="card-copy"><span class="index">00 · pieza individual</span><h3>El resultado de cerca</h3><p>Tipo: belleza · Gancho: plano detalle</p><p class="case-note"><strong>Material:</strong> clip original · <strong>Enfoque:</strong> plano detalle · <strong>Objetivo:</strong> mostrar el resultado.</p></div>
             </article>
           </aside>
           <div class="pairs-column">
@@ -192,7 +194,7 @@
                   <div class="video-wrap"><video src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/par1-despues.mp4" aria-label="Después: El diseño de la mirada" preload="metadata" muted playsinline></video><span class="open-hint" aria-hidden="true">Ampliar · controles</span></div>
                 </div>
                 <div class="labels"><span class="label">ANTES</span><span class="label after">DESPUÉS</span></div>
-                <div class="card-copy"><span class="index">01</span><h3>El diseño de la mirada</h3><p>Tipo: belleza · Gancho: POV y primer plano</p><p class="case-note"><strong>Material:</strong> original y versión editada · <strong>Enfoque:</strong> comparación lado a lado · <strong>Objetivo:</strong> destacar el diseño de la mirada.</p></div>
+                <div class="card-copy"><span class="index">01</span><h3>El diseño de la mirada</h3><p>Tipo: belleza · Gancho: POV y primer plano</p><p class="case-note"><strong>Material:</strong> antes y después · <strong>Enfoque:</strong> comparativa directa · <strong>Objetivo:</strong> destacar el diseño de la mirada.</p></div>
               </article>
               <article class="pair-card video-group" data-video-group>
                 <div class="video-pair">
@@ -200,7 +202,7 @@
                   <div class="video-wrap"><video src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/par2-despues.mp4?portfolio-page=2#t=0.01" aria-label="Después: Explicación a cámara" preload="metadata" muted playsinline></video><span class="open-hint" aria-hidden="true">Ampliar · controles</span></div>
                 </div>
                 <div class="labels"><span class="label">ANTES</span><span class="label after">DESPUÉS</span></div>
-                <div class="card-copy"><span class="index">02</span><h3>Explicación a cámara</h3><p>Tipo: contenido educativo · Gancho: frase directa</p><p class="case-note"><strong>Material:</strong> toma a cámara · <strong>Enfoque:</strong> explicación directa · <strong>Objetivo:</strong> presentar el mensaje con claridad.</p></div>
+                <div class="card-copy"><span class="index">02</span><h3>Explicación a cámara</h3><p>Tipo: contenido educativo · Gancho: frase directa</p><p class="case-note"><strong>Material:</strong> toma a cámara · <strong>Enfoque:</strong> explicación directa · <strong>Objetivo:</strong> presentar el mensaje.</p></div>
               </article>
               <article class="pair-card video-group" data-video-group>
                 <div class="video-pair">
@@ -208,7 +210,7 @@
                   <div class="video-wrap"><video src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/par3-despues.mp4" aria-label="Después: Humor y resultado visual" preload="metadata" muted playsinline></video><span class="open-hint" aria-hidden="true">Ampliar · controles</span></div>
                 </div>
                 <div class="labels"><span class="label">ANTES</span><span class="label after">DESPUÉS</span></div>
-                <div class="card-copy"><span class="index">03</span><h3>Humor y resultado visual</h3><p>Tipo: moda · Gancho: conversación</p><p class="case-note"><strong>Material:</strong> toma de conversación · <strong>Enfoque:</strong> humor y resultado visual · <strong>Objetivo:</strong> cerrar la pieza con el resultado.</p></div>
+                <div class="card-copy"><span class="index">03</span><h3>Humor y resultado visual</h3><p>Tipo: moda · Gancho: conversación</p><p class="case-note"><strong>Material:</strong> clip de conversación · <strong>Enfoque:</strong> humor + resultado · <strong>Objetivo:</strong> mostrar el cambio visual.</p></div>
               </article>
             </div>
           </div>
@@ -224,7 +226,7 @@
     </section>
   </main>
   <dialog class="dialog" id="video-dialog" aria-labelledby="dialog-title">
-    <div class="dialog-head"><h2 id="dialog-title">Video del portfolio</h2><button class="dialog-close" type="button" data-dialog-close>Cerrar ×</button></div>
+    <div class="dialog-head"><h2 id="dialog-title">Video del portfolio</h2><div class="dialog-actions"><button class="dialog-fullscreen" type="button" data-dialog-fullscreen>Pantalla completa</button><button class="dialog-close" type="button" data-dialog-close>Cerrar ×</button></div></div>
     <video id="dialog-video" controls playsinline preload="metadata"></video>
   </dialog>
   <script>
@@ -270,6 +272,12 @@
         if (dialog.open) dialog.close();
       };
       document.querySelector('[data-dialog-close]').addEventListener('click', closeDialog);
+      document.querySelector('[data-dialog-fullscreen]').addEventListener('click', async () => {
+        try {
+          if (dialogVideo.requestFullscreen) await dialogVideo.requestFullscreen();
+          else if (dialogVideo.webkitEnterFullscreen) dialogVideo.webkitEnterFullscreen();
+        } catch (_) {}
+      });
       dialog.addEventListener('click', event => { if (event.target === dialog) closeDialog(); });
       dialog.addEventListener('close', () => { dialogVideo.pause(); dialogVideo.removeAttribute('src'); dialogVideo.load(); });
       const reset = group => {
