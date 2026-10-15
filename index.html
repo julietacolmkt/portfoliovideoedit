@@ -3,7 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Portfolio de edición de video de Julieta Collins: moda, belleza, lifestyle y UGC.">
+  <meta name="description" content="Julieta Collins: edición de Reels, video vertical y UGC para moda, belleza y lifestyle. Del material en bruto a una pieza con ritmo, claridad y propósito.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Julieta Collins · Editora de video">
+  <meta property="og:description" content="Edición de Reels, video vertical y UGC para moda, belleza y lifestyle.">
+  <meta property="og:url" content="https://julietacolmkt.github.io/portfoliovideoedit/">
+  <meta name="twitter:card" content="summary">
   <title>Julieta Collins · Portfolio de edición de video</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%235A1C30'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Georgia' font-size='28' fill='%23FBF4F5'%3EJC%3C/text%3E%3C/svg%3E">
   <style>
@@ -32,7 +37,21 @@
     .cover-showcase { min-width:0; align-self:stretch; display:flex; flex-direction:column; justify-content:center; }
     .cover-pair { display:grid; grid-template-columns:1fr 1fr; gap:.85rem; min-height:0; }
     .cover-video { position:relative; aspect-ratio:9/16; max-height:61vh; overflow:hidden; border:1px solid rgba(251,244,245,.6); background:#260913; }
-    video { display:block; width:100%; height:100%; object-fit:cover; background:#260913; }
+    video { display:block; width:100%; height:100%; object-fit:contain; background:#260913; }
+    .video-wrap video,.feature-media video,.cover-video video { object-fit:contain; }
+    .case-note { margin:.28rem 0 0; color:#654552; font-size:clamp(.67rem,.82vw,.88rem); line-height:1.35; }
+    .project-cta { display:inline-flex; align-items:center; justify-content:center; padding:.7rem 1rem; border:1px solid var(--burgundy); border-radius:999px; background:var(--burgundy); color:var(--cream); text-decoration:none; font-weight:700; }
+    .project-cta:hover { background:transparent; color:var(--burgundy); }
+    .video-wrap { cursor:pointer; }
+    .open-hint { position:absolute; inset:auto .45rem .45rem; z-index:2; border-radius:999px; padding:.3rem .5rem; background:rgba(251,244,245,.94); color:var(--burgundy); font-size:clamp(.6rem,.74vw,.78rem); text-align:center; pointer-events:none; }
+    .video-wrap .play { display:none; }
+    .video-wrap:focus-within { outline:3px solid var(--accent); outline-offset:2px; }
+    .dialog { width:min(94vw,70rem); max-height:94svh; padding:1rem; border:1px solid var(--accent); border-radius:1rem; background:var(--cream); color:var(--ink); }
+    .dialog::backdrop { background:rgba(30,8,17,.86); }
+    .dialog-head { display:flex; justify-content:space-between; align-items:center; gap:1rem; margin-bottom:.7rem; }
+    .dialog-head h2 { font-size:clamp(1.2rem,2vw,1.8rem); }
+    .dialog-close { border:1px solid var(--burgundy); border-radius:999px; background:transparent; color:var(--burgundy); padding:.5rem .9rem; cursor:pointer; }
+    .dialog video { width:100%; max-height:80svh; height:auto; aspect-ratio:9/16; margin:auto; background:#18060d; }
     .cover-caption { margin:.8rem 0 0; font-family:Georgia,'Times New Roman',serif; font-size:clamp(.95rem,1.25vw,1.35rem); }
     .footer { border-top:1px solid currentColor; padding-top:1.1%; letter-spacing:.02em; text-transform:none; opacity:.86; }
     .footer span:last-child { letter-spacing:.08em; }
@@ -108,13 +127,14 @@
             <p class="role">Editora de videos</p>
             <hr class="hero-rule">
             <p class="statement">Del material en bruto a la pieza final.</p>
-            <p class="description">Montaje, ritmo, subtítulos y color para Reels, YouTube y UGC.</p>
+            <p class="description">Edición de Reels, video vertical y UGC con ritmo, claridad y una intención para cada pieza.</p>
+            <a class="project-cta" href="mailto:julietacollinsmkt@gmail.com?subject=Hablemos%20de%20tu%20proyecto">Hablemos de tu proyecto</a>
             <div class="chips" aria-label="Formatos"><span class="chip">Reels</span><span class="chip">YouTube</span><span class="chip">UGC</span></div>
           </div>
           <div class="cover-showcase">
             <div class="cover-pair" data-cover-pair>
-              <div class="cover-video"><video src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/par2-antes.mp4" aria-label="Antes del Reel" preload="auto" muted playsinline autoplay loop></video></div>
-              <div class="cover-video"><video src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/par2-despues.mp4" aria-label="Después del Reel" preload="auto" muted playsinline autoplay loop></video></div>
+              <div class="cover-video"><video src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/par2-antes.mp4" aria-label="Antes del Reel" preload="metadata" muted playsinline autoplay loop></video></div>
+              <div class="cover-video"><video src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/par2-despues.mp4" aria-label="Después del Reel" preload="metadata" muted playsinline autoplay loop></video></div>
             </div>
             <p class="cover-caption">Antes y después de un Reel</p>
           </div>
@@ -135,10 +155,10 @@
             <p class="section-label">Ejemplo destacado</p>
             <article class="feature-card video-group" data-video-group>
               <div class="feature-media video-wrap">
-                <video src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/solo.mp4" aria-label="El resultado de cerca" preload="auto" muted playsinline></video>
-                <button class="play" type="button" aria-label="Reproducir El resultado de cerca"></button>
+                <video src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/solo.mp4" aria-label="El resultado de cerca" preload="metadata" muted playsinline></video>
+                <span class="open-hint" aria-hidden="true">Abrir video</span>
               </div>
-              <div class="card-copy"><span class="index">00 · sin antes</span><h3>El resultado de cerca</h3><p>Gancho: plano detalle</p></div>
+              <div class="card-copy"><span class="index">00 · pieza individual</span><h3>El resultado de cerca</h3><p>Tipo: belleza · Gancho: plano detalle</p><p class="case-note">La imagen cercana pone el resultado en primer plano.</p></div>
             </article>
           </aside>
           <div class="pairs-column">
@@ -146,27 +166,27 @@
             <div class="pairs">
               <article class="pair-card video-group" data-video-group>
                 <div class="video-pair">
-                  <div class="video-wrap"><video src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/par1-antes.MOV" aria-label="Antes: El diseño de la mirada" preload="auto" muted playsinline></video><button class="play" type="button" aria-label="Reproducir par 1"></button></div>
-                  <div class="video-wrap"><video src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/par1-despues.mp4" aria-label="Después: El diseño de la mirada" preload="auto" muted playsinline></video><button class="play" type="button" aria-label="Reproducir par 1"></button></div>
+                  <div class="video-wrap"><video src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/par1-antes.MOV" aria-label="Antes: El diseño de la mirada" preload="metadata" muted playsinline></video><span class="open-hint" aria-hidden="true">Abrir video</span></div>
+                  <div class="video-wrap"><video src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/par1-despues.mp4" aria-label="Después: El diseño de la mirada" preload="metadata" muted playsinline></video><span class="open-hint" aria-hidden="true">Abrir video</span></div>
                 </div>
                 <div class="labels"><span class="label">ANTES</span><span class="label after">DESPUÉS</span></div>
-                <div class="card-copy"><span class="index">01</span><h3>El diseño de la mirada</h3><p>Gancho: POV y primer plano</p></div>
+                <div class="card-copy"><span class="index">01</span><h3>El diseño de la mirada</h3><p>Tipo: belleza · Gancho: POV y primer plano</p><p class="case-note">El contraste entre proceso y resultado hace visible el cambio.</p></div>
               </article>
               <article class="pair-card video-group" data-video-group>
                 <div class="video-pair">
-                  <div class="video-wrap"><video src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/par2-antes.mp4?portfolio-page=2#t=0.01" aria-label="Antes: Explicación a cámara" preload="auto" muted playsinline></video><button class="play" type="button" aria-label="Reproducir par 2"></button></div>
-                  <div class="video-wrap"><video src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/par2-despues.mp4?portfolio-page=2#t=0.01" aria-label="Después: Explicación a cámara" preload="auto" muted playsinline></video><button class="play" type="button" aria-label="Reproducir par 2"></button></div>
+                  <div class="video-wrap"><video src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/par2-antes.mp4?portfolio-page=2#t=0.01" aria-label="Antes: Explicación a cámara" preload="metadata" muted playsinline></video><span class="open-hint" aria-hidden="true">Abrir video</span></div>
+                  <div class="video-wrap"><video src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/par2-despues.mp4?portfolio-page=2#t=0.01" aria-label="Después: Explicación a cámara" preload="metadata" muted playsinline></video><span class="open-hint" aria-hidden="true">Abrir video</span></div>
                 </div>
                 <div class="labels"><span class="label">ANTES</span><span class="label after">DESPUÉS</span></div>
-                <div class="card-copy"><span class="index">02</span><h3>Explicación a cámara</h3><p>Gancho: frase directa</p></div>
+                <div class="card-copy"><span class="index">02</span><h3>Explicación a cámara</h3><p>Tipo: contenido educativo · Gancho: frase directa</p><p class="case-note">Una pieza a cámara que prioriza el mensaje hablado.</p></div>
               </article>
               <article class="pair-card video-group" data-video-group>
                 <div class="video-pair">
-                  <div class="video-wrap"><video src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/par3-antes.mov" aria-label="Antes: Humor y resultado visual" preload="auto" muted playsinline></video><button class="play" type="button" aria-label="Reproducir par 3"></button></div>
-                  <div class="video-wrap"><video src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/par3-despues.mp4" aria-label="Después: Humor y resultado visual" preload="auto" muted playsinline></video><button class="play" type="button" aria-label="Reproducir par 3"></button></div>
+                  <div class="video-wrap"><video src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/par3-antes.mov" aria-label="Antes: Humor y resultado visual" preload="metadata" muted playsinline></video><span class="open-hint" aria-hidden="true">Abrir video</span></div>
+                  <div class="video-wrap"><video src="https://julieta-collins-portfolio-video.horusrocky.chatgpt.site/media/par3-despues.mp4" aria-label="Después: Humor y resultado visual" preload="metadata" muted playsinline></video><span class="open-hint" aria-hidden="true">Abrir video</span></div>
                 </div>
                 <div class="labels"><span class="label">ANTES</span><span class="label after">DESPUÉS</span></div>
-                <div class="card-copy"><span class="index">03</span><h3>Humor y resultado visual</h3><p>Gancho: conversación</p></div>
+                <div class="card-copy"><span class="index">03</span><h3>Humor y resultado visual</h3><p>Tipo: moda · Gancho: conversación</p><p class="case-note">La conversación acompaña el resultado visual de la pieza.</p></div>
               </article>
             </div>
           </div>
@@ -176,10 +196,15 @@
           <p><strong>Ritmo</strong>Cortes y subtítulos con énfasis para sostener la atención.</p>
           <p><strong>Cierre</strong>Una llamada a la acción clara: reservar, escribir o guardar.</p>
         </div>
+        <div style="display:flex;justify-content:flex-end;padding:0 0 .7rem"><a class="project-cta" href="mailto:julietacollinsmkt@gmail.com?subject=Hablemos%20de%20tu%20proyecto">Contactame por correo</a></div>
         <footer class="footer"><span>Julieta Collins / Reels con estrategia</span><span>02 / 12</span></footer>
       </div>
     </section>
   </main>
+  <dialog class="dialog" id="video-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-head"><h2 id="dialog-title">Video del portfolio</h2><button class="dialog-close" type="button" data-dialog-close>Cerrar ×</button></div>
+    <video id="dialog-video" controls playsinline preload="metadata"></video>
+  </dialog>
   <script>
     (() => {
       const pages = [...document.querySelectorAll('.page')];
@@ -193,6 +218,37 @@
       });
 
       const groups = [...document.querySelectorAll('[data-video-group]')];
+      const dialog = document.querySelector('#video-dialog');
+      const dialogVideo = document.querySelector('#dialog-video');
+      const dialogTitle = document.querySelector('#dialog-title');
+      document.querySelectorAll('.video-wrap').forEach(wrap => {
+        wrap.tabIndex = 0;
+        wrap.setAttribute('role','button');
+        const source = wrap.querySelector('video');
+        wrap.setAttribute('aria-label','Abrir y reproducir ' + (source?.getAttribute('aria-label') || 'video'));
+        const open = () => {
+          const video = wrap.querySelector('video');
+          if (!video) return;
+          stopOthers(null);
+          document.querySelectorAll('[data-cover-pair] video').forEach(coverVideo => coverVideo.pause());
+          dialogTitle.textContent = (video.getAttribute('aria-label') || 'Video').replace(/^(Antes|Después):\\s*/, '');
+          dialogVideo.src = video.currentSrc || video.src;
+          dialogVideo.load();
+          dialog.showModal();
+          dialogVideo.play().catch(() => {});
+        };
+        wrap.addEventListener('click', open);
+        wrap.addEventListener('keydown', event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); open(); } });
+      });
+      const closeDialog = () => {
+        dialogVideo.pause();
+        dialogVideo.removeAttribute('src');
+        dialogVideo.load();
+        if (dialog.open) dialog.close();
+      };
+      document.querySelector('[data-dialog-close]').addEventListener('click', closeDialog);
+      dialog.addEventListener('click', event => { if (event.target === dialog) closeDialog(); });
+      dialog.addEventListener('close', () => { dialogVideo.pause(); dialogVideo.removeAttribute('src'); dialogVideo.load(); });
       const reset = group => {
         group.classList.remove('is-playing');
         group.querySelectorAll('video').forEach(video => { video.pause(); try { video.currentTime = 0; } catch (_) {} });
@@ -200,6 +256,7 @@
       const stopOthers = active => groups.forEach(group => { if (group !== active) reset(group); });
       const play = group => {
         stopOthers(group);
+        if (!group) return;
         group.classList.add('is-playing');
         group.querySelectorAll('video').forEach(video => { video.muted = true; video.play().catch(() => group.classList.remove('is-playing')); });
       };
@@ -217,8 +274,8 @@
           video.load();
         });
         group.querySelectorAll('.play').forEach(button => button.addEventListener('click', event => { event.stopPropagation(); toggle(group); }));
-        group.addEventListener('mouseenter', () => play(group));
-        group.addEventListener('mouseleave', () => reset(group));
+        group.addEventListener('mouseenter', () => {});
+        group.addEventListener('mouseleave', () => {});
         videos.forEach(video => video.addEventListener('ended', () => {
           video.currentTime = 0;
           if (videos.every(item => item.ended || item.currentTime === 0)) group.classList.remove('is-playing');
@@ -226,11 +283,17 @@
       });
 
       const cover = document.querySelector('[data-cover-pair]');
-      const startCover = () => cover?.querySelectorAll('video').forEach(video => { video.muted = true; video.play().catch(() => {}); });
-      const stopCover = () => cover?.querySelectorAll('video').forEach(video => video.pause());
+      const coverVideo = cover?.querySelector('video');
+      const startCover = () => {
+        if (!coverVideo || document.hidden || !document.querySelector('.page-one').getBoundingClientRect().height) return;
+        const rect = document.querySelector('.page-one').getBoundingClientRect();
+        if (rect.bottom > 0 && rect.top < innerHeight) coverVideo.play().catch(() => {});
+      };
+      const stopCover = () => coverVideo?.pause();
       addEventListener('load', startCover, {once:true});
-      document.addEventListener('visibilitychange', () => { if (!document.hidden) startCover(); });
+      document.addEventListener('visibilitychange', () => { if (document.hidden) stopCover(); else startCover(); });
       new IntersectionObserver(([entry]) => entry.isIntersecting ? startCover() : stopCover(), {threshold:.3}).observe(document.querySelector('.page-one'));
+      document.addEventListener('keydown', event => { if (event.key === 'Escape' && dialog.open) closeDialog(); });
     })();
   </script>
 </body>
